@@ -8,9 +8,10 @@ function Portfolio({portfolio, removeCoin, handleDisplayCoins, quantity, handleQ
 
   const portfolioMap = portfolio.map(coin => (<PortfolioLineItem key={coin.id} coin={coin} removeCoin={removeCoin} handleQuantity={handleQuantity} portfolio={portfolio}/>))
   
+  // returns the total market value of portfolio
   function handleMarketValue() {
     const portfolioMarketCapMap = portfolio.map(coin => coin.quantity > 0 ? parseFloat(coin.quantity) * parseFloat(coin.current_price) : 0)
-    //return portfolioMarketCapMap.reduce((a, b) => a + b)
+    
     if (portfolioMarketCapMap.length > 0) {
       portfolioMarketCapMap.reduce((a, b) => a + b)
     } else {
@@ -18,6 +19,7 @@ function Portfolio({portfolio, removeCoin, handleDisplayCoins, quantity, handleQ
     }
   }
 
+  // updates the total market value upon a change in portfolio
   useEffect(() => {
     setTotalMarketValue(prev => handleMarketValue())
   }, [portfolio])

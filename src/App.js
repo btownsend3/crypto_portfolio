@@ -9,12 +9,14 @@ function App() {
   const [search, setSearch] = useState('')
   const [displayCoins, setDisplayCoins] = useState(true)
   const [displayPortfolio, setDisplayPortfolio] = useState(false)
+  // set portfolio from local storage or empty array
   const [portfolio, setPortfolio] = useState(() => {
     const saved = localStorage.getItem("portfolio");
     const initialValue = JSON.parse(saved);
     return initialValue || [];
   })
 
+  // updates the quantity of a coin in the portfolio
   function handleQuantity(id, qty) {
     setPortfolio(prev => prev.map(coin => {
       if (coin.id === id) {
@@ -26,10 +28,12 @@ function App() {
     }))
   }
   
+  // updates search bar value
   function handleChange(e) {
-    setSearch(prev => e.target.value)
+    setSearch(prev => e.target.value.toLowerCase())
   }
 
+  // displays only coins that match search criteria
   const filteredCoins = coinData.filter(coin => (
     (coin.id.toLowerCase().includes(search)
     || coin.symbol.toLowerCase().includes(search)) 
@@ -45,6 +49,7 @@ function App() {
     console.log(localStorage.getItem("portolio"))
   }
 
+  // removes the selected coin from the portfolio
   function removeCoin(id) {
     setPortfolio(prev => prev.filter(coin => coin.id !== id))
   }
@@ -59,6 +64,7 @@ function App() {
     setDisplayCoins(false)
   }
 
+  // coingecko api request for top 100 cryptocurrencies by market cap
   useEffect(() => {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
     .then(res => {
@@ -66,6 +72,7 @@ function App() {
     })
   }, [search])
 
+  // updates local storage upon changes to portfolio
   useEffect(() => {
     localStorage.setItem("portfolio", JSON.stringify(portfolio))
   }, [portfolio])

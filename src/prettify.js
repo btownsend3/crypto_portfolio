@@ -1,3 +1,4 @@
+// returns more human readable large numbers
 export function prettifyNumber(value) { 
   var thousand = 1000; 
   var million = 1000000; 
@@ -24,6 +25,7 @@ export function prettifyNumber(value) {
   } 
 } 
 
+// returns price with 2 decimal places if over $1 or 8 decimal places if under $1
 export function prettifyPrice(value) {
   if (value > 999) {
     return value.toLocaleString()
