@@ -4,11 +4,13 @@ import {prettifyPrice} from '../prettify'
 function PortfolioLineItem({coin, removeCoin, handleQuantity, portfolio}) {
   const [quantity, setQuantity] = useState(coin.quantity)
 
+  // sets quantity of a coin
   function handleChange(e) {
     e.preventDefault()
     setQuantity(prev => e.target.value)
   }
   
+  // updates the quantity of a coin in the portfolio upon change in quantity
   useEffect(() => {
     handleQuantity(coin.id, quantity)
   }, [quantity])
