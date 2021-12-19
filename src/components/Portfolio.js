@@ -13,7 +13,7 @@ function Portfolio({portfolio, removeCoin, handleDisplayCoins, quantity, handleQ
     const portfolioMarketCapMap = portfolio.map(coin => coin.quantity > 0 ? parseFloat(coin.quantity) * parseFloat(coin.current_price) : 0)
     
     if (portfolioMarketCapMap.length > 0) {
-      portfolioMarketCapMap.reduce((a, b) => a + b)
+      return portfolioMarketCapMap.reduce((a, b) => a + b)
     } else {
       return 0
     }
@@ -23,6 +23,8 @@ function Portfolio({portfolio, removeCoin, handleDisplayCoins, quantity, handleQ
   useEffect(() => {
     setTotalMarketValue(prev => handleMarketValue())
   }, [portfolio])
+
+  console.log(totalMarketValue)
 
   return (
     <div>

@@ -9,7 +9,9 @@ function PortfolioHeader() {
       </div>
       <p className="coin-price">Price</p>
       <p className="coin-quantity">Quantity</p>
-      <p className="coin-change">Market Value</p>
+      <div className="portfolio-market-value-container">
+        <p className="coin-change">Market Value</p>
+      </div>
       <button className="btn-remove hide">X</button>
     </div>
   )

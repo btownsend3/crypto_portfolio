@@ -68,12 +68,12 @@ h1,
   align-items: center;
 }
 
-.portfolio-price-container {
+.portfolio-market-value-container {
   width: 70px;
   align-self: center;
 }
 
-.portfolio-price-container .coin-change {
+.portfolio-market-value-container .coin-change {
   margin-top: 0;
   text-align: left;
 }

@@ -9,7 +9,9 @@ function PortfolioFooter({totalMarketValue}) {
         </div>
         <p className="coin-price"></p>
         <p className="coin-quantity"></p>
-        <p className="coin-change">${totalMarketValue.toLocaleString(2)}</p>
+        <div className="portfolio-market-value-container">
+          <p className="coin-market-value">${totalMarketValue.toLocaleString(2)}</p>
+        </div>
         <button className="btn-remove hide">X</button>
       </div>
   )
