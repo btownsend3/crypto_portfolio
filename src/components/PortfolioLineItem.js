@@ -32,7 +32,7 @@ function PortfolioLineItem({coin, removeCoin, handleQuantity, portfolio}) {
         value={quantity}
         onChange={handleChange}
       />
-      <div className="portfolio-price-container">
+      <div className="portfolio-market-value-container">
         <p className="coin-market-value">${(quantity * coin.current_price).toLocaleString("en-US")}</p>
         <p className={coin.price_change_percentage_24h >= 0 ? 'green coin-change' : 'red coin-change'}>{coin.price_change_percentage_24h > 0 ? '+' + coin.price_change_percentage_24h.toFixed(2) : coin.price_change_percentage_24h.toFixed(2)}%</p>
       </div>
