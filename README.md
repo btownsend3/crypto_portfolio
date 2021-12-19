@@ -2,7 +2,7 @@
 
 This is a portfolio tracker and price viewer for the top 100 cryptocurrencies by market cap written in React
 
-Working demo here: https://optimistic-joliot-2aed4a.netlify.app/
+Working demo here: https://jovial-visvesvaraya-db2a1d.netlify.app/
 
 ## Using the app
 
