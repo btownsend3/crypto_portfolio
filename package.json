@@ -1,5 +1,5 @@
 {
-  "name": "crypto_prices3",
+  "name": "crypto_portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
