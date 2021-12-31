@@ -35,7 +35,7 @@ function Portfolio({portfolio, removeCoin, handleDisplayCoins, quantity, handleQ
           <button onClick={handleDisplayCoins}>here</button>
         </div>
       )}
-      {portfolio.length > 0 && totalMarketValue &&  <PortfolioFooter totalMarketValue={totalMarketValue} />}
+      {portfolio.length > 0 && <PortfolioFooter totalMarketValue={totalMarketValue} />}
     </div>
   )
 }
