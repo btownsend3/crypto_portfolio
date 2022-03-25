@@ -46,7 +46,6 @@ function App() {
       setPortfolio(prev => [...prev, {...coinObj, quantity: 0}])
       localStorage.setItem("portfolio", JSON.stringify(portfolio))
     }
-    console.log(localStorage.getItem("portolio"))
   }
 
   // removes the selected coin from the portfolio
@@ -71,6 +70,22 @@ function App() {
       setCoinData(res.data)
     })
   }, [search])
+
+  // Update portfolio prices
+  useEffect(() => {
+    if (portfolio.length) {
+      coinData.forEach(coin => {
+        setPortfolio(portfolio.map(item => {
+          if (item.id === coin.id) {
+            item.current_price = coin.current_price
+            item.price_change_percentage_24h = coin.price_change_percentage_24h
+          }
+          return item
+        }))
+      
+      })
+    }
+  }, [coinData])
 
   // updates local storage upon changes to portfolio
   useEffect(() => {

@@ -2,7 +2,7 @@ import React from 'react'
 
 function PortfolioFooter({totalMarketValue}) {
   return (
-    <div class="coin-container coin-footer">
+    <div className="coin-container coin-footer">
         <div className="img-container" />
         <div className="coin-id-container">
           <p className="coin-id"></p>
