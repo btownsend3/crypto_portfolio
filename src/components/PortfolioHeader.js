@@ -2,7 +2,7 @@ import React from 'react'
 
 function PortfolioHeader() {
   return (
-    <div class="coin-container coin-header">
+    <div className="coin-container coin-header">
       <div className="img-container" />
       <div className="coin-id-container">
         <p className="coin-id">Name</p>

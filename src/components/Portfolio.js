@@ -24,8 +24,6 @@ function Portfolio({portfolio, removeCoin, handleDisplayCoins, quantity, handleQ
     setTotalMarketValue(prev => handleMarketValue())
   }, [portfolio])
 
-  console.log(totalMarketValue)
-
   return (
     <div>
       {portfolio.length > 0 && <PortfolioHeader />}
